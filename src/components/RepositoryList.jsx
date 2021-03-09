@@ -1,5 +1,9 @@
 import { RepositoryItem } from "./RepositoryItem";
 import '../styles/repositories.scss';
+import { useEffect, useState } from "react";
+
+
+//https://api.github.com/users/IgorGamantino
 
 let repository = {
   name: 'ReactJs',
@@ -7,6 +11,13 @@ let repository = {
   link: 'https://github.com/igorGamantino'
 }
 export function RepositoryList() {
+  const [repositories,setRepositories] = useState([])
+
+  useEffect(() => {
+   fetch('https://api.github.com/users/IgorGamantino/repos')
+    .then(response => response.json())
+    .then(data => setRepositories(data))
+  },[])
     return (
         <section className='repository-list'>
 
