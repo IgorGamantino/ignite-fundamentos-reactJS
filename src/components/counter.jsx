@@ -10,7 +10,7 @@ export default function Counter(){
   return (
      <div>
        <h2>{counter}</h2>
-       <button type='button' onClick={icrementCounter}>Icrement {counter}</button>
+       <button type='button' onClick={icrementCounter}>Icremente {counter}</button>
      </div>
   )
 }
